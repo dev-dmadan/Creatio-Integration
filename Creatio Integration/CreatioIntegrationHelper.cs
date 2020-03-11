@@ -55,7 +55,7 @@ namespace Creatio_Integration
 			Console.WriteLine("Creatio Integration Running...");
 		}
 
-		public HttpClientResponse Request(string Method, string Url, dynamic Data = null, Dictionary<string, string> Headers = null)
+		public async Task<HttpClientResponse> Request(string Method, string Url, dynamic Data = null, Dictionary<string, string> Headers = null)
 		{
 			HttpClientResponse result = new HttpClientResponse();
 			int attempts = 0;
@@ -75,11 +75,11 @@ namespace Creatio_Integration
 					temp_ = Headers_.Concat(Headers).GroupBy(d => d.Key).ToDictionary(d => d.Key, d => d.First().Value);
 				}
 
-				var response = HttpClientRequest(Method, Url, Data, (temp_.Count > 0 ? temp_ : Headers_)).GetAwaiter().GetResult();
+				var response = await HttpClientRequest(Method, Url, Data, (temp_.Count > 0 ? temp_ : Headers_));
 				if (!response.IsSuccessStatusCode)
 				{
 					attempts++;
-					login();
+					await login();
 				}
 				else
 				{
@@ -92,7 +92,7 @@ namespace Creatio_Integration
 			return result;
 		}
 
-		private void login()
+		private async Task<bool> login()
 		{
 			Console.WriteLine("Login running...");
 
@@ -101,13 +101,15 @@ namespace Creatio_Integration
 				UserName = UserName,
 				UserPassword = UserPassword
 			};
-			var response = HttpClientRequest("POST", uri, data, 
+			var response = await HttpClientRequest("POST", uri, data,
 				new Dictionary<string, string> {
 					{"Accept", "application/json"}
 				}
-			).GetAwaiter().GetResult();
+			);
 
 			WriteCookies();
+
+			return true;
 		}
 
 		private async Task<HttpClientResponse> HttpClientRequest(string Method, string Url, dynamic Data = null, Dictionary<string, string> Headers = null)

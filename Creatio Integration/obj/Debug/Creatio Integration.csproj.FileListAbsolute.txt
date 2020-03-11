@@ -6,3 +6,4 @@ D:\C# Project\CreatioIntegration\Creatio Integration\bin\Debug\Newtonsoft.Json.x
 D:\C# Project\CreatioIntegration\Creatio Integration\obj\Debug\Creatio Integration.csproj.CopyComplete
 D:\C# Project\CreatioIntegration\Creatio Integration\obj\Debug\Creatio Integration.exe
 D:\C# Project\CreatioIntegration\Creatio Integration\obj\Debug\Creatio Integration.pdb
+D:\C# Project\CreatioIntegration\Creatio Integration\obj\Debug\Creatio Integration.csprojAssemblyReference.cache

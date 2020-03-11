@@ -10,7 +10,7 @@ namespace Creatio_Integration
 {
     class Program
     {
-        static void Main(string[] args)
+        static async Task Main(string[] args)
         {
             string userName = "Supervisor";
             string userPassword = "Supervisor";
@@ -18,8 +18,8 @@ namespace Creatio_Integration
 
             CreatioIntegrationHelper creatio = new CreatioIntegrationHelper(userName, userPassword, url);
 
-            string endpoint = $"{url}/0/rest/PeriodicalEditionWebService/GetTotalPlannedIssues";
-            var request = creatio.Request("POST", endpoint, new { 
+            string endpoint = $"{url}/0/ServiceModel/ProcessEngineService.svc/GlbBPDirectDContactImport/Execute";
+            var request = await creatio.Request("POST", endpoint, new { 
                 Code = "123"
             });
 
