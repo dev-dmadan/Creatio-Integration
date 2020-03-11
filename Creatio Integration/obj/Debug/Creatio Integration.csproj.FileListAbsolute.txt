@@ -1,0 +1,8 @@
+D:\C# Project\CreatioIntegration\Creatio Integration\bin\Debug\Creatio Integration.exe.config
+D:\C# Project\CreatioIntegration\Creatio Integration\bin\Debug\Creatio Integration.exe
+D:\C# Project\CreatioIntegration\Creatio Integration\bin\Debug\Creatio Integration.pdb
+D:\C# Project\CreatioIntegration\Creatio Integration\bin\Debug\Newtonsoft.Json.dll
+D:\C# Project\CreatioIntegration\Creatio Integration\bin\Debug\Newtonsoft.Json.xml
+D:\C# Project\CreatioIntegration\Creatio Integration\obj\Debug\Creatio Integration.csproj.CopyComplete
+D:\C# Project\CreatioIntegration\Creatio Integration\obj\Debug\Creatio Integration.exe
+D:\C# Project\CreatioIntegration\Creatio Integration\obj\Debug\Creatio Integration.pdb
